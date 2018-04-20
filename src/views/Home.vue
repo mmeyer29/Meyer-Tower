@@ -11,10 +11,12 @@
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
 import PilotMatcher from '@/components/PilotMatcher.vue'
-console.log("star wars is rad");
+import people from '@/data/people.json'
+//console.log("star wars is rad");
+//console.log(people[0]);
 var arr = [1, 2, 3];
 function demo (arr) {
-  console.log(arr[2]);
+  //console.log(arr[2]);
   return arr[2];
 }
 demo(arr);
