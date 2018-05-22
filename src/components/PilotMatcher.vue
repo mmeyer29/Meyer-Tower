@@ -31,49 +31,61 @@ export default {
   },
   created: function() {
     this.fetchData()
-
   },
   methods: {
     fetchData: function() {
-      //const self = this;
       fetch("https://swapi.co/api/starships")
         .then(response => response.json())
         .then(response =>  {
           this.starships = response.results
         })
     },
+    trackSearch: function(){
+      fetch("https://meyer-starships.herokuapp.com/searches", {
+        method:"POST",
+        headers: {"content-type": "application/json"},
+        body: JSON.stringify({
+          search:{searchTerm: this.vehicle}
+        })
+      })
+        .then(response => response.json())
+        .then(response =>  {
+        })
+    },
+    trackResult: function(){
+      fetch("https://meyer-starships.herokuapp.com/results", {
+        method:"POST",
+        headers: {"content-type": "application/json"},
+        body: JSON.stringify({
+          result:{resultsTerm: this.answer}
+        })
+      })
+        .then(response => response.json())
+        .then(response =>  {
+        })
+    },
     onSubmit : function() {
        var matchedStarship = this.starships.filter(starship => starship.name === this.vehicle)[0]
-       console.log(matchedStarship.name, matchedStarship.pilots[0]);
+       //console.log(matchedStarship.name, matchedStarship.pilots[0]);
        var newString = matchedStarship.pilots[0]
-       console.log("hola", this.separateNum(newString));
-       //console.log("finalAnswer", this.getPilot(separateNum));
+       console.log(this.separateNum(newString));
+       this.trackSearch();
+       this.trackResult()
     },
     separateNum : function(newString){
       var numberSlash = newString.replace( /^\D+/g, '');
       var finalIndex = numberSlash.slice(0, -1);
-      console.log("hi", people[1].pk);
-       console.log("hello", this.getPilot(finalIndex));
-
+      console.log("hello", this.getPilot(finalIndex));
       return finalIndex;
     },
     getPilot : function(index){
-      console.log("get pilot", index)
       for (var i = 0; i < people.length; i++) {
-          //console.log("people", people[i].pk)
         if(people[i].pk == index){
-          console.log(people[i].fields.name)
           var answer = people[i].fields.name;
-          console.log("ANSWER", answer);
           this.answer = answer
-          console.log(this.answer);
         }
       }
       }
-      //getPilot(finalIndex)
     }
   };
-
-
-
 </script>

@@ -1,8 +1,10 @@
 // https://docs.cypress.io/api/introduction/api.html
 
-describe('My First Test', () => {
-  it('Visits the Kitchen Sink', () => {
-    cy.visit('/')
-    cy.contains('h1', 'Welcome to Your Vue.js App')
-  })
+describe('Tower tests', () => {
+  it('contains the correct h1 and a UL', () => {
+    cy.visit('https://meyer-tower.firebaseapp.com/#/')
+    cy.contains('h1', 'Welcome to Star Wars DMV!')
+    cy.contains('ul')
+  });
+
 })
