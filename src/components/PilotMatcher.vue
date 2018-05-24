@@ -88,4 +88,11 @@ export default {
       }
     }
   };
+  // fetch('https://meyer-starships.herokuapp.com/searches')
+  //   .then(function(response) {
+  //     return response.json();
+  //   })
+  //   .then(function(myJson) {
+  //     console.log(myJson);
+  //   });
 </script>

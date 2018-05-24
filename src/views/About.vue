@@ -16,10 +16,10 @@
   	},
     data: () => ({
     chartData: {
-        labels: ['Item 1', 'Item 2'],
+        labels: ['Millennium Falcon', 'Slave 1'],
         datasets: [
             {
-                label: 'Component 1',
+                label: 'vehicles',
                 data: [5, 10],
                 backgroundColor: [
                'rgb(0,173,115)',

@@ -3,7 +3,14 @@
     <img src="../assets/sw-logo.png">
     <HelloWorld msg="Welcome to Star Wars DMV!"/>
     <PilotMatcher/>
+      <!-- <div>
+      <v-btn color="success">Success</v-btn>
+      <v-btn color="error">Error</v-btn>
+      <v-btn color="warning">Warning</v-btn>
+      <v-btn color="info">Info</v-btn>
+    </div> -->
   </div>
+
 
 </template>
 
@@ -12,6 +19,7 @@
 import HelloWorld from '@/components/HelloWorld.vue'
 import PilotMatcher from '@/components/PilotMatcher.vue'
 import people from '@/data/people.json'
+import CrudStuff from '@/components/CrudStuff.vue'
 //console.log("star wars is rad");
 //console.log(people[0]);
 var arr = [1, 2, 3];

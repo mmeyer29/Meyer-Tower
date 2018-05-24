@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
-    This is a wonderful app that will match Star Wars vehicles with their registered <br>
+    This is an app that will match Star Wars vehicles with their registered <br>
     owners and then keep track of the records and graph the frequency they're searched.
     </p>
 
