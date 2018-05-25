@@ -3,7 +3,6 @@
     <h1>Star Wars DMV Database Access</h1>
     <p>Here you can delete, and update entries to the results database.
   </p>
-  <!-- <CrudStuff/> -->
     <Card2 v-for="result in renResults" :key="result.id" :data="result">
     </Card2>
   </div>
@@ -13,7 +12,6 @@
 <script>
 import Card2 from "@/components/Card2.vue";
 export default {
-  //name: "crudFunctionality",
   components: { Card2 },
   data() {
     return {
@@ -33,12 +31,12 @@ export default {
   methods: {
     onSubmit(id, data) {
       fetch(`https://meyer-starships.herokuapp.com/results/${id}`, {
-        body: JSON.stringify(data), // must match 'Content-Type' header
+        body: JSON.stringify(data),
         headers: {
           "content-type": "application/json"
         },
         method: "PUT"
-      }).then(response => response.json()); // parses response to JSON
+      }).then(response => response.json()); 
     }
   }
 };

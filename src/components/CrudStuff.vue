@@ -10,8 +10,7 @@
 export default {
   data(){
     return {
-      renSearches: [],
-      renResults: []
+      renSearches: []
     }
   },
   mounted(){

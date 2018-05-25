@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="welcome">
     <h1>{{ msg }}</h1>
     <p>
     This is an app that will match Star Wars vehicles with their registered <br>
@@ -11,14 +11,13 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Welcome',
   props: {
     msg: String
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 div {
   color: pink;

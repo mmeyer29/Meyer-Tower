@@ -1,6 +1,6 @@
 <template>
 <v-card>
-  <v-card-title class="primary white--text">I'm a Result Card</v-card-title>
+  <v-card-title class="primary white--text">Result</v-card-title>
   <v-card-text>
     {{ data.resultsTerm }}
     <form class="user-entry" v-on:submit.prevent="onSubmit(data.id, person)">
@@ -11,8 +11,6 @@
   </v-card-text>
   <v-divider></v-divider>
   <v-card-actions>
-
-    <v-btn flat class="green--text darken-1">edit</v-btn>
     <v-btn flat class="green--text darken-1" v-on:click="onClick(data.id)">delete</v-btn>
   </v-card-actions>
 </v-card>
@@ -27,25 +25,24 @@ export default {
   methods: {
     onSubmit(id, searchTerm) {
       fetch(`https://meyer-starships.herokuapp.com/results/${id}`, {
-        body: JSON.stringify({searchTerm}), // must match 'Content-Type' header
+        body: JSON.stringify({searchTerm}),
         headers: {
           "content-type": "application/json"
         },
         method: "PUT"
-      }).then(response => response.json()); // parses response to JSON
+      }).then(response => response.json());
     },
     onClick(id, data) {
       fetch(`https://meyer-starships.herokuapp.com/results/${id}`, {
-
         headers: {
           "content-type": "application/json"
         },
         method: "DELETE"
-      }).then(response => response.json()); // parses response to JSON
+      }).then(response => response.json());
     }
   }
 }
-
 </script>
+
 <style lang="scss" scoped>
 </style>
